@@ -1,0 +1,64 @@
+/* HorizontalNavbar.css */
+
+.horizontal-nav {
+    font-size: 23px;
+    background-color: rgb(126, 126, 126);
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .horizontal-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Align links to the left */
+    align-items: center;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .horizontal-nav li {
+    margin: 0;
+  }
+  
+  .horizontal-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 30px 20px 30px 30px; /* Adjust left padding here */
+    transition: color 0.3s;
+  }
+  
+  .horizontal-nav a:hover {
+    color: #b6b6b6;
+  }
+  
+
+.top-margin{
+    padding-top: 50px;
+    margin-top: 50px;
+}
+
+/* styles.css */
+.flex-container {
+    display: flex;
+  }
+  
+  .box {
+    flex: 1; /* Equal width for both boxes */
+    padding: 20px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin: 10px;
+  }
+
+  /* styles.css */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    gap: 20px;
+  }
+  
+  .box {
+    padding: 20px;
+  }
