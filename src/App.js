@@ -7,7 +7,6 @@ import Zone from './components/createZone';
 
 
 function App() {
-  console.log(process.env.REACT_APP_API_HOST)
   return (
     <div>
     <BrowserRouter>
