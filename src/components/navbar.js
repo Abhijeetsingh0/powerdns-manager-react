@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="horizontal-nav">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">SmartDNS</Link>
         </li>
         <li>
           <Link to="/Record">Record</Link>

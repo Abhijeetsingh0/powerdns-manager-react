@@ -25,7 +25,7 @@ function ZoneList() {
         <div>
             <h2>Zones</h2>
                 <div className="zonelist">  
-                    <ul>
+                    <ul id="zoneListUl">
                         {zoneList.map(zone => (
                         <li key={zone.id}>{zone.name}</li>
                         ))}
