@@ -1,22 +1,8 @@
-// import React from 'react';
 import Navbar from './navbar';
-
-
-// function Record() { 
-//   console.log("home ")
-//   return (
-//     <div>
-//       <Navbar/>
-//       <h1>Record page </h1>
-//     </div>
-//   );
-// }
-
-// export default Record;
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
+
 
 const Record = () => {
   const [zones, setZones] = useState([]);
@@ -26,6 +12,7 @@ const Record = () => {
   const [ipAddress, setIpAddress] = useState('');
   const [response, setResponse] = useState('');
   const [error, setError] = useState('');
+  const [submit, setSubmit] = useState(false); 
 
   useEffect(() => {
     fetchZoneList();
@@ -80,6 +67,7 @@ const Record = () => {
       .then(response => {
         setResponse('Record added successfully.');
         setError('');
+        setSubmit(true)
       })
       .catch(error => {
         if (error && error.response && error.response.data && error.response.data.error) {
@@ -91,13 +79,20 @@ const Record = () => {
       });
   };
 
+  if(submit){
+    return( 
+        <Navigate replace to="/" />
+     )
+  }
+
   return (
     <div>
-        <Navbar/>
-      <h2>Add Record</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Select Zone:</label>
-        <select value={selectedZone} onChange={(e) => setSelectedZone(e.target.value)}>
+    <Navbar/>
+    <div className='flex-container'>
+     <h2>Add Record</h2>
+      <form className='record-form' onSubmit={handleSubmit}>
+        <label  className='form-label'>Select Zone:</label>
+        <select  className='form-select' value={selectedZone} onChange={(e) => setSelectedZone(e.target.value)}>
           <option value="">Select a zone</option>
           {zones.map(zone => (
             <option key={zone.id} value={zone.name}>
@@ -105,38 +100,41 @@ const Record = () => {
             </option>
           ))}
         </select>
-
+        <br/>
+        <label  className='form-label'>Sub Domain:</label>
         <input
+          className='recordInput'
           type="text"
           placeholder="Sub Domain"
           value={subDomain}
           onChange={subDomainChange}
         />
-
         <br />
-        <label>Record Type:</label>
-        <select value={recordType} onChange={(e) => setRecordType(e.target.value)}>
+        <label  className='form-label'>Record Type:</label>
+        <select className='typeInput' value={recordType} onChange={(e) => setRecordType(e.target.value)}>
           <option value="A">A</option>
           <option value="CNAME">CNAME</option>
           {/* Add more record types as needed */}
         </select>
-
-        <br />
-        <label>IP Address:</label>
+        <br/>
+        <label  className='form-label' >IP Address:</label>
         <input
+          className='recordInput'
           type="text"
+          placeholder='Enter the IP address'
           value={ipAddress}
           onChange={(e) => setIpAddress(e.target.value)}
         />
-
-        <br />
-        <button type="submit">Add Record</button>
+        <br/>
+        <button  className='form-button' type="submit">Add Record</button>
       </form>
 
-      {error && <div>Error: {error}</div>}
-      {response && <div>Response: {response}</div>}
+      {error && <div className='error-message' >Error: {error}</div>}
+      {response && <div className='success-message'>Response: {response}</div>}
+    </div>
     </div>
   );
 };
+
 
 export default Record;

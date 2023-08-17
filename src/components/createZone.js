@@ -8,9 +8,9 @@ function Zone() {
     <div>
       <Navbar/>
 
-        <div className="flex-container">
-            <div className="box"><ZoneForm/> </div>
-            <div className="box"><ZoneList/></div>
+        <div className='grid-container zone-margin'>
+            <div className='grid-child '><ZoneForm/> </div>
+            <div className='grid-child '><ZoneList/></div>
         </div>
     </div>
   );

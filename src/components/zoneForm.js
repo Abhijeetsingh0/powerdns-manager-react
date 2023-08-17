@@ -55,11 +55,12 @@ const ZoneForm = (props) => {
 
   return (
     <div>
-      <h2>Enter Zone Name</h2>
-      <form>
+      <h2>Enter Zone Name and Password</h2>
+      <form className='my-form'>
         <input
+          id="input_id"
           type="text"
-          placeholder="Your Name"
+          placeholder="Enter zone name"
           value={inputName}
           onChange={handleInputChange}
         />
@@ -67,6 +68,7 @@ const ZoneForm = (props) => {
         <br className='top-margin' />
         <br />
         <input
+        id="input_id"
           type="password"
           placeholder="Enter Password"
           value={password}
@@ -76,14 +78,13 @@ const ZoneForm = (props) => {
         <br className='top-margin' />
         <br />
 
-        <button type="button" onClick={submitForm}>
+        <button className='form-button-zone'  type="button" onClick={submitForm}>
           Submit
         </button>
       </form>
 
-      
     {error && (
-    <div>
+    <div className='error-message' >
     <h3>Error:</h3>
     <p>{error}</p>
     </div>

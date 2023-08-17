@@ -23,12 +23,14 @@ function ZoneList() {
 
     return (
         <div>
-            <h1>Zones</h1>
-                <ul>
-                    {zoneList.map(zone => (
-                    <li key={zone.id}>{zone.name}</li>
-                    ))}
-                </ul>
+            <h2>Zones</h2>
+                <div className="zonelist">  
+                    <ul>
+                        {zoneList.map(zone => (
+                        <li key={zone.id}>{zone.name}</li>
+                        ))}
+                    </ul>
+                </div>
         </div>
     );
 }

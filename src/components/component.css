@@ -8,6 +8,7 @@
   }
   
   .horizontal-nav ul {
+    height: 57px;
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -16,12 +17,13 @@
     margin: 0;
     border-bottom: 1px solid #ccc;
   }
-  
+
   .horizontal-nav li {
     margin: 0;
   }
   
   .horizontal-nav a {
+    font-size: xx-large;
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -32,33 +34,129 @@
   .horizontal-nav a:hover {
     color: #b6b6b6;
   }
-  
 
-.top-margin{
-    padding-top: 50px;
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .record-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 700px;
+    height: 550px;
+  }
+  
+  .form-label {
+    font-size: 20px;
+    margin: 25px;
+    height: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-select,
+  .form-input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+  }
+  
+  .recordInput{
+    width: 50%;
+    height: 30px;
+  }
+
+  .typeInput{
+    width: 20%;
+    height: 30px;
+  }
+
+  .form-button{
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+  }
+  
+  .error-message {
+    color: #ff0000;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: #008000;
+    margin-top: 10px;
+  }
+
+  .grid-container {
+    width: 70%;
     margin-top: 50px;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    
 }
 
-/* styles.css */
-.flex-container {
-    display: flex;
-  }
-  
-  .box {
-    flex: 1; /* Equal width for both boxes */
-    padding: 20px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    margin: 10px;
-  }
+.zone-margin{
+  margin-left: 15%;
+}
 
-  /* styles.css */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
-    gap: 20px;
-  }
+.my-form{
+  margin-top: 30px;
+  border-radius: 0.5%;
+  height: 300px;
+  place-items: center;
+  width: 500px; /* Adjust the width as needed */
+  padding: 20px; /* Add some padding for spacing */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: large;
+}
+
   
-  .box {
-    padding: 20px;
-  }
+.form-button-zone {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+  margin-left: 29%;
+}
+
+
+#input_id{
+  height: 27px;
+  margin-top: 30px;
+  width: 70%;
+  margin-left: 14%;
+}
+
+
+.zonelist{
+  margin-top: 30px;
+  border-radius: 0.5%;
+  height: 300px;
+  place-items: center;
+  width: 500px; /* Adjust the width as needed */
+  padding: 20px; /* Add some padding for spacing */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: large;
+}
