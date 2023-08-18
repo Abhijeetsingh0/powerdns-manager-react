@@ -69,3 +69,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # powerdns-manager-react
+
+
+
+### docker build
+docker buld -t react-app-image .
+
+### docker run 
+
+give the name accordingly and the REACT_APP_API_HOST is for the powerDNS api host and ip as per your convinent 
+as for me my ip address is 192.168.68.118 and the port is 8081 which is already conf in .env file
+
+sudo docker run -d -p 3001:3000 --name <constainer-name> -e REACT_APP_API_HOST=http://192.168.68.118 react-app-image
